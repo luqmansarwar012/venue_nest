@@ -1,6 +1,5 @@
-from logger_config import logger
+from core.service import logger
 from fastapi import FastAPI
-import database
 
 app = FastAPI()
 
