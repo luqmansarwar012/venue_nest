@@ -1,10 +1,11 @@
-from sqlalchemy.orm import sessionmaker, DeclarativeBase
-from database.constants import DATABASE_URL
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
+from .constants import DATABASE_URL
 
 engine = create_engine(DATABASE_URL, echo=True)
 db_session = sessionmaker(bind=engine)
-Base = DeclarativeBase()
+Base = declarative_base()
 
 
 def get_database():
